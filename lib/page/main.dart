@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_lab/pages/form_page.dart';
+import 'package:flutter_lab/widgets/DrawerWidget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,30 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       // Menambahkan drawer menu
-      drawer: Drawer(
-        child: Column(
-          children: [
-            // Menambahkan clickable menu
-            ListTile(
-              title: const Text('Counter'),
-              onTap: () {
-                // Route menu ke halaman utama
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text('Form'),
-              onTap: () {
-                // Route menu ke halaman form
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyFormPage()));
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const DrawerWidget(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
